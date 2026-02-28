@@ -1,0 +1,34 @@
+basePath: /
+definitions:
+  dto.PingResponse:
+    properties:
+      message:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: Uptime monitoring service
+  title: Ticker Uptime API
+  version: "1.0"
+paths:
+  /healthcheck:
+    get:
+      description: Returns pong
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/dto.PingResponse'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Ping healthcheck
+swagger: "2.0"

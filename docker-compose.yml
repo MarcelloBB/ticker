@@ -1,16 +1,16 @@
 version: "3.9"
 
 services:
-  ticker-uptime:
-    build: .
-    container_name: ticker-uptime
-    ports:
-      - "8080:8080"
-    volumes:
-      - ./config-file.init:/root/config-file.ini
-    depends_on:
-      - redis
-      - postgres
+  # ticker-uptime:
+  #   build: .
+  #   container_name: ticker-uptime
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - ./config-file.ini:/root/config-file.ini
+  #   depends_on:
+  #     - redis
+  #     - postgres
 
   redis:
     image: redis:7.0-alpine

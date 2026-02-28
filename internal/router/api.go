@@ -3,8 +3,8 @@ package router
 import (
 	"fmt"
 
-	"github.com/MarcelloBB/plata/internal/config"
-	"github.com/MarcelloBB/plata/internal/db"
+	"github.com/MarcelloBB/ticker/internal/config"
+	"github.com/MarcelloBB/ticker/internal/db"
 	"github.com/gin-gonic/gin"
 )
 
