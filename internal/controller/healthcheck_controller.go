@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type HealthcheckController struct {}
+type HealthcheckController struct{}
 
 func NewHealthcheckController() HealthcheckController {
 	return HealthcheckController{}

@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/MarcelloBB/ticker/internal/config"
+	"github.com/MarcelloBB/ticker/internal/model"
 	_ "github.com/lib/pq"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -38,13 +39,10 @@ func ConnectDB() (*gorm.DB, error) {
 
 	fmt.Println("Connected to " + dbname)
 
-	// AUTOMIGRATION STUFF
-	// fmt.Println("Running automigration...")
-	// err = db.AutoMigrate(&model.User{})
-	// if err != nil {
-	// 	fmt.Println("Error running automigration:", err)
-	// 	panic(err)
-	// }
+	if err := db.AutoMigrate(&model.UptimeTarget{}); err != nil {
+		fmt.Println("Error running automigration:", err)
+		panic(err)
+	}
 
 	return db, nil
 }
